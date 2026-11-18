@@ -1,0 +1,37 @@
+{
+  "$schema": "../gen/schemas/desktop-schema.json",
+  "identifier": "default",
+  "description": "Ana pencere icin minimum yetki kumesi; envanteri izin -> cagri yeri -> gerekli mi biciminde esler. Uygulama komutlari (invoke ile cagrilan Rust komutlari) ACL izni gerektirmez; bu yuzden fs/shell/process gibi eklenti izinleri verilmez. Webview'e yalnizca gercekten kullandigi yetkiler verilir: (1) opener ile http/https adres acma - src/lib/preview/links.ts::openExternalUrl; (2) oturum deposu uzerinde load/get/set/save - src/lib/session/ipc.ts (dosya app-data altindaki session.json'a cozulur); (3) adli olay aboneligi/kaldirma (core:event:allow-listen/allow-unlisten) - src/lib/ipc/events.ts::subscribeEvent. Olay izni zorunludur: Rust her CloseRequested'i prevent_close ile durdurup kapatma kararini webview'e birakir (src-tauri/src/lib.rs::handle_window_event -> app:close-requested), dinleyici aboneligi ACL'de reddedilirse pencere hic kapanmaz, cunku teardown'u tetikleyecek mesaj yerine ulasmaz. Pencere kapatma bilerek core:window izni ile verilmez: webview yok etme/ kapama cagirmaz (core:window:allow-destroy/allow-close verilmez), teardown'u Rust tarafindaki app_close_window komutu yapar (src-tauri/src/lib.rs::app_close_window; cagri yeri src/App.svelte::destroyWindow). Dialog izni bilerek verilmez: klasor secimi Rust tarafinda tauri-plugin-dialog ile yapilir (src-tauri/src/workspace_commands.rs::open_workspace -> app.dialog().file().pick_folder). ACL yalnizca webview IPC'sini kisitlar; Rust'tan yapilan eklenti cagrisi izin gerektirmedigi icin klasor acma ve pencere kapatma calisir, webview ise kendi basina ne klasor secer ne pencere kapatir. Yeni bir webview cagrisi eklenmedikce bu liste buyutulmemelidir.",
+  "windows": ["main"],
+  "permissions": [
+    {
+      "identifier": "core:event:allow-listen",
+      "description": "Rust'un yayinladigi olaylara abone olma. Kritik cagri yeri: src/lib/app/closeRequest.ts::subscribeAppCloseRequested ('app:close-requested'). Bu izin olmadan dinleyici reddedilir, prevent_close ile durdurulan kapatma istegi webview'e ulasmaz ve pencere kapatilamaz. Diger cagri yerleri: src/lib/watch/watcher.ts (dosya izleme olaylari), src/lib/app/theme.ts (tauri://theme-changed)."
+    },
+    {
+      "identifier": "core:event:allow-unlisten",
+      "description": "Abonelikleri kaldirma; dinleyiciler bilesen yok olurken/unmount'ta temizlenir. Cagri yeri: src/lib/ipc/events.ts::subscribeEvent'in dondurdugu unlisten (App.svelte onMount temizligi)."
+    },
+    {
+      "identifier": "opener:allow-open-url",
+      "description": "Onizleme baglantilari: yalnizca http ve https adresleri sistem tarayicisinda acilir (mailto, file, javascript, data reddedilir). Cagri yeri: src/lib/preview/links.ts (openUrl).",
+      "allow": [{ "url": "https://*" }, { "url": "http://*" }]
+    },
+    {
+      "identifier": "store:allow-load",
+      "description": "Oturum deposunu (app-data altindaki session.json) acma. Cagri yeri: src/lib/session/ipc.ts::openStore (load)."
+    },
+    {
+      "identifier": "store:allow-get",
+      "description": "Oturum kaydini ('session' anahtari) okuma. Cagri yeri: src/lib/session/ipc.ts::loadSession (get)."
+    },
+    {
+      "identifier": "store:allow-set",
+      "description": "Oturum kaydini bellekte guncelleme. Cagri yeri: src/lib/session/ipc.ts::saveSession (set)."
+    },
+    {
+      "identifier": "store:allow-save",
+      "description": "Oturum kaydini diske yazma. Cagri yeri: src/lib/session/ipc.ts::saveSession (save)."
+    }
+  ]
+}

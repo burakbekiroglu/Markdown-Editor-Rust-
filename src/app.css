@@ -1,0 +1,130 @@
+/*
+ * Tema token'ları.
+ *
+ * Varsayılan (açık öznitelik yokken) sistem tercihini izler: `prefers-color-scheme: light`
+ * açık seti, aksi hâlde koyu seti uygular. Çalışma anında gelen tema
+ * değişimi `:root[data-theme=...]` ile medya sorgusunu geçersiz kılar
+ * (bkz. src/lib/app/theme.ts).
+ */
+:root {
+  color-scheme: dark;
+
+  --bg: #1e1e1e;
+  --bg-elevated: #252526;
+  --bg-hover: #2a2d2e;
+  --surface: #1e1e1e;
+  --surface-raised: #2d2d30;
+  --surface-hover: #2a2d2e;
+  --border: #3c3c3c;
+  --text: #d4d4d4;
+  --text-dim: #8a8a8a;
+  --text-muted: #8a8a8a;
+  --selection: #094771;
+  --accent: #4f9cf9;
+  --danger: #f14c4c;
+  --diff-added: #7ee2a8;
+  --diff-removed: #ff8b8b;
+  --warning-accent: #f5c451;
+  --warning-bg: #3a2f0b;
+  --warning-border: #b8860b;
+  --warning-text: #ffe9a8;
+  --font-mono: 'Cascadia Mono', Consolas, ui-monospace, monospace;
+
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--text);
+  background-color: var(--bg);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme='dark']) {
+    color-scheme: light;
+
+    --bg: #ffffff;
+    --bg-elevated: #f3f3f3;
+    --bg-hover: #e8e8e8;
+    --surface: #ffffff;
+    --surface-raised: #f6f6f6;
+    --surface-hover: #ebebeb;
+    --border: #d4d4d4;
+    --text: #1f1f1f;
+    --text-dim: #616161;
+    --text-muted: #616161;
+    --selection: #cfe4fb;
+    --accent: #0b6bcb;
+    --danger: #c42b1c;
+    --diff-added: #137333;
+    --diff-removed: #b3261e;
+    --warning-accent: #8a6100;
+    --warning-bg: #fff4ce;
+    --warning-border: #d0a400;
+    --warning-text: #5c4600;
+  }
+}
+
+:root[data-theme='light'] {
+  color-scheme: light;
+
+  --bg: #ffffff;
+  --bg-elevated: #f3f3f3;
+  --bg-hover: #e8e8e8;
+  --surface: #ffffff;
+  --surface-raised: #f6f6f6;
+  --surface-hover: #ebebeb;
+  --border: #d4d4d4;
+  --text: #1f1f1f;
+  --text-dim: #616161;
+  --text-muted: #616161;
+  --selection: #cfe4fb;
+  --accent: #0b6bcb;
+  --danger: #c42b1c;
+  --diff-added: #137333;
+  --diff-removed: #b3261e;
+  --warning-accent: #8a6100;
+  --warning-bg: #fff4ce;
+  --warning-border: #d0a400;
+  --warning-text: #5c4600;
+}
+
+:root[data-theme='dark'] {
+  color-scheme: dark;
+
+  --bg: #1e1e1e;
+  --bg-elevated: #252526;
+  --bg-hover: #2a2d2e;
+  --surface: #1e1e1e;
+  --surface-raised: #2d2d30;
+  --surface-hover: #2a2d2e;
+  --border: #3c3c3c;
+  --text: #d4d4d4;
+  --text-dim: #8a8a8a;
+  --text-muted: #8a8a8a;
+  --selection: #094771;
+  --accent: #4f9cf9;
+  --danger: #f14c4c;
+  --diff-added: #7ee2a8;
+  --diff-removed: #ff8b8b;
+  --warning-accent: #f5c451;
+  --warning-bg: #3a2f0b;
+  --warning-border: #b8860b;
+  --warning-text: #ffe9a8;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#app {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  overflow: hidden;
+}

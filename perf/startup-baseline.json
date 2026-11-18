@@ -1,0 +1,290 @@
+{
+  "profile": "release (embedded dist)",
+  "platform": "win32 x64",
+  "warmRuns": 5,
+  "cold": {
+    "processToFcpMs": 545,
+    "pageFcpMs": 172,
+    "rustFirstPaintMs": 428,
+    "limitMs": 3000,
+    "pass": true
+  },
+  "warm": {
+    "runs": [
+      {
+        "processToFcpMs": 456,
+        "pageFcpMs": 140,
+        "rustFirstPaintMs": 378
+      },
+      {
+        "processToFcpMs": 444,
+        "pageFcpMs": 136,
+        "rustFirstPaintMs": 375
+      },
+      {
+        "processToFcpMs": 452,
+        "pageFcpMs": 136,
+        "rustFirstPaintMs": 369
+      },
+      {
+        "processToFcpMs": 457,
+        "pageFcpMs": 128,
+        "rustFirstPaintMs": 385
+      },
+      {
+        "processToFcpMs": 469,
+        "pageFcpMs": 144,
+        "rustFirstPaintMs": 399
+      }
+    ],
+    "medianProcessToFcpMs": 456,
+    "medianPageFcpMs": 136,
+    "limitMs": 900,
+    "pass": true
+  },
+  "idleCpu": {
+    "windowMs": 5000,
+    "cores": 16,
+    "medianPercentOfTotal": 0.098,
+    "maxPercentOfTotal": 1.719,
+    "medianPercentOfCore": 1.56,
+    "medianTailPercentOfTotal": 0,
+    "limitPercentOfTotal": 1,
+    "pass": true
+  },
+  "externalRequests": [],
+  "resources": [
+    "http://tauri.localhost/assets/index-CIab0ohj.js",
+    "http://tauri.localhost/assets/index-CVF2FXn4.css",
+    "http://tauri.localhost/assets/rolldown-runtime-XKyaHtl9.js",
+    "http://ipc.localhost/take_startup_warnings",
+    "http://ipc.localhost/plugin%3Aevent%7Clisten",
+    "http://tauri.localhost/favicon.ico",
+    "http://ipc.localhost/current_workspace",
+    "http://ipc.localhost/report_first_paint",
+    "http://ipc.localhost/plugin%3Astore%7Cload",
+    "http://ipc.localhost/plugin%3Astore%7Cget",
+    "http://ipc.localhost/plugin%3Astore%7Cset",
+    "http://ipc.localhost/plugin%3Astore%7Csave"
+  ],
+  "requests": [
+    {
+      "url": "http://tauri.localhost/assets/index-CIab0ohj.js",
+      "origin": "http://tauri.localhost",
+      "local": true,
+      "initiatorType": "script",
+      "startMs": 16.9,
+      "durationMs": 4.4
+    },
+    {
+      "url": "http://tauri.localhost/assets/rolldown-runtime-XKyaHtl9.js",
+      "origin": "http://tauri.localhost",
+      "local": true,
+      "initiatorType": "other",
+      "startMs": 17.1,
+      "durationMs": 3.1
+    },
+    {
+      "url": "http://tauri.localhost/assets/index-CVF2FXn4.css",
+      "origin": "http://tauri.localhost",
+      "local": true,
+      "initiatorType": "link",
+      "startMs": 17.1,
+      "durationMs": 3.6
+    },
+    {
+      "url": "http://ipc.localhost/take_startup_warnings",
+      "origin": "http://ipc.localhost",
+      "local": true,
+      "initiatorType": "fetch",
+      "startMs": 31.2,
+      "durationMs": 21.5
+    },
+    {
+      "url": "http://ipc.localhost/plugin%3Aevent%7Clisten",
+      "origin": "http://ipc.localhost",
+      "local": true,
+      "initiatorType": "fetch",
+      "startMs": 32.1,
+      "durationMs": 21
+    },
+    {
+      "url": "http://tauri.localhost/favicon.ico",
+      "origin": "http://tauri.localhost",
+      "local": true,
+      "initiatorType": "other",
+      "startMs": 51.6,
+      "durationMs": 1
+    },
+    {
+      "url": "http://ipc.localhost/current_workspace",
+      "origin": "http://ipc.localhost",
+      "local": true,
+      "initiatorType": "fetch",
+      "startMs": 112.8,
+      "durationMs": 2.9
+    },
+    {
+      "url": "http://ipc.localhost/report_first_paint",
+      "origin": "http://ipc.localhost",
+      "local": true,
+      "initiatorType": "fetch",
+      "startMs": 114.1,
+      "durationMs": 1.9
+    },
+    {
+      "url": "http://ipc.localhost/plugin%3Astore%7Cload",
+      "origin": "http://ipc.localhost",
+      "local": true,
+      "initiatorType": "fetch",
+      "startMs": 116.2,
+      "durationMs": 1.6
+    },
+    {
+      "url": "http://ipc.localhost/plugin%3Astore%7Cget",
+      "origin": "http://ipc.localhost",
+      "local": true,
+      "initiatorType": "fetch",
+      "startMs": 118.3,
+      "durationMs": 1.1
+    },
+    {
+      "url": "http://ipc.localhost/plugin%3Astore%7Cset",
+      "origin": "http://ipc.localhost",
+      "local": true,
+      "initiatorType": "fetch",
+      "startMs": 632.7,
+      "durationMs": 1.4
+    },
+    {
+      "url": "http://ipc.localhost/plugin%3Astore%7Csave",
+      "origin": "http://ipc.localhost",
+      "local": true,
+      "initiatorType": "fetch",
+      "startMs": 634.6,
+      "durationMs": 1.2
+    }
+  ],
+  "modules": [
+    {
+      "module": "IPC: take_startup_warnings",
+      "files": [
+        "http://ipc.localhost/take_startup_warnings"
+      ],
+      "entries": 5,
+      "medianDurationMs": 19.8,
+      "medianStartMs": 31.9,
+      "medianDecodedKb": 0
+    },
+    {
+      "module": "IPC: plugin:event|listen",
+      "files": [
+        "http://ipc.localhost/plugin%3Aevent%7Clisten"
+      ],
+      "entries": 10,
+      "medianDurationMs": 19,
+      "medianStartMs": 33.2,
+      "medianDecodedKb": 0
+    },
+    {
+      "module": "giriş kabuğu (main.ts + App.svelte)",
+      "files": [
+        "http://tauri.localhost/assets/index-CIab0ohj.js"
+      ],
+      "entries": 5,
+      "medianDurationMs": 4.5,
+      "medianStartMs": 18.1,
+      "medianDecodedKb": 125.4
+    },
+    {
+      "module": "kabuk stilleri",
+      "files": [
+        "http://tauri.localhost/assets/index-CVF2FXn4.css"
+      ],
+      "entries": 5,
+      "medianDurationMs": 3.6,
+      "medianStartMs": 18.3,
+      "medianDecodedKb": 19.1
+    },
+    {
+      "module": "modül çalışma zamanı (Vite)",
+      "files": [
+        "http://tauri.localhost/assets/rolldown-runtime-XKyaHtl9.js"
+      ],
+      "entries": 5,
+      "medianDurationMs": 3.2,
+      "medianStartMs": 18.3,
+      "medianDecodedKb": 0.7
+    },
+    {
+      "module": "IPC: plugin:store|set",
+      "files": [
+        "http://ipc.localhost/plugin%3Astore%7Cset"
+      ],
+      "entries": 5,
+      "medianDurationMs": 1.6,
+      "medianStartMs": 632.7,
+      "medianDecodedKb": 0
+    },
+    {
+      "module": "IPC: current_workspace",
+      "files": [
+        "http://ipc.localhost/current_workspace"
+      ],
+      "entries": 5,
+      "medianDurationMs": 1.5,
+      "medianStartMs": 116.5,
+      "medianDecodedKb": 0
+    },
+    {
+      "module": "IPC: plugin:store|load",
+      "files": [
+        "http://ipc.localhost/plugin%3Astore%7Cload"
+      ],
+      "entries": 5,
+      "medianDurationMs": 1.5,
+      "medianStartMs": 118.5,
+      "medianDecodedKb": 0
+    },
+    {
+      "module": "IPC: plugin:store|save",
+      "files": [
+        "http://ipc.localhost/plugin%3Astore%7Csave"
+      ],
+      "entries": 5,
+      "medianDurationMs": 1.4,
+      "medianStartMs": 634.6,
+      "medianDecodedKb": 0
+    },
+    {
+      "module": "IPC: report_first_paint",
+      "files": [
+        "http://ipc.localhost/report_first_paint"
+      ],
+      "entries": 5,
+      "medianDurationMs": 1.1,
+      "medianStartMs": 117.8,
+      "medianDecodedKb": 0
+    },
+    {
+      "module": "IPC: plugin:store|get",
+      "files": [
+        "http://ipc.localhost/plugin%3Astore%7Cget"
+      ],
+      "entries": 5,
+      "medianDurationMs": 1.1,
+      "medianStartMs": 120.1,
+      "medianDecodedKb": 0
+    },
+    {
+      "module": "favicon.ico",
+      "files": [
+        "http://tauri.localhost/favicon.ico"
+      ],
+      "entries": 5,
+      "medianDurationMs": 1,
+      "medianStartMs": 51.6,
+      "medianDecodedKb": 0.5
+    }
+  ]
+}

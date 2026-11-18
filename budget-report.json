@@ -1,0 +1,188 @@
+{
+  "generatedAt": "2026-11-18T21:32:26.432Z",
+  "platform": "win32 x64",
+  "node": "v24.19.0",
+  "command": "npm run budget:measure",
+  "allMeasured": false,
+  "ok": false,
+  "metrics": [
+    {
+      "id": "js",
+      "label": "İlk yüklenen JS toplamı (gzip)",
+      "durationMs": 78,
+      "exitCode": 0,
+      "command": "node scripts/check-bundle-budget.mjs --json-out C:\\Users\\bkrgl\\OneDrive\\Desktop\\md-editor\\.temp_files\\budget\\js.json",
+      "status": "measured",
+      "unit": "KB",
+      "value": 310.7,
+      "limit": 320,
+      "pass": true,
+      "detail": {
+        "dist": "C:\\Users\\bkrgl\\OneDrive\\Desktop\\md-editor\\dist",
+        "initialChunks": [
+          {
+            "file": "assets/index-BYat3cGs.js",
+            "rawKb": 59.5,
+            "gzipKb": 20.2
+          },
+          {
+            "file": "assets/toast.svelte-jwbK9xZP.js",
+            "rawKb": 43.1,
+            "gzipKb": 16.6
+          },
+          {
+            "file": "assets/rolldown-runtime-XKyaHtl9.js",
+            "rawKb": 0.7,
+            "gzipKb": 0.4
+          }
+        ],
+        "startupChunks": [
+          {
+            "file": "assets/rolldown-runtime-XKyaHtl9.js",
+            "rawKb": 0.7,
+            "gzipKb": 0.4
+          },
+          {
+            "file": "assets/toast.svelte-jwbK9xZP.js",
+            "rawKb": 43.1,
+            "gzipKb": 16.6
+          },
+          {
+            "file": "assets/index-BYat3cGs.js",
+            "rawKb": 59.5,
+            "gzipKb": 20.2
+          },
+          {
+            "file": "assets/dist-js-Cdv3kJbi.js",
+            "rawKb": 0.1,
+            "gzipKb": 0.1
+          },
+          {
+            "file": "assets/core-DYVNBsTp.js",
+            "rawKb": 19.9,
+            "gzipKb": 7.8
+          },
+          {
+            "file": "assets/bash-BqpFWvKu.js",
+            "rawKb": 2.7,
+            "gzipKb": 1.5
+          },
+          {
+            "file": "assets/css-D8M8GYaw.js",
+            "rawKb": 11.8,
+            "gzipKb": 4.2
+          },
+          {
+            "file": "assets/javascript-DMgQAH-8.js",
+            "rawKb": 6.2,
+            "gzipKb": 2.5
+          },
+          {
+            "file": "assets/json-PmyKWHmm.js",
+            "rawKb": 0.6,
+            "gzipKb": 0.4
+          },
+          {
+            "file": "assets/markdown-D6FrnlqJ.js",
+            "rawKb": 2,
+            "gzipKb": 0.9
+          },
+          {
+            "file": "assets/python-gHmu6VPG.js",
+            "rawKb": 3.2,
+            "gzipKb": 1.4
+          },
+          {
+            "file": "assets/rust-BIKPVoi6.js",
+            "rawKb": 2.7,
+            "gzipKb": 1.4
+          },
+          {
+            "file": "assets/typescript-Da0fK7fQ.js",
+            "rawKb": 7.4,
+            "gzipKb": 3
+          },
+          {
+            "file": "assets/xml-COl5yFSC.js",
+            "rawKb": 1.8,
+            "gzipKb": 0.7
+          },
+          {
+            "file": "assets/ConflictHost-CkYqPvqP.js",
+            "rawKb": 5.8,
+            "gzipKb": 2.6
+          },
+          {
+            "file": "assets/EditorPane-sbp9frCq.js",
+            "rawKb": 557.1,
+            "gzipKb": 190.3
+          },
+          {
+            "file": "assets/PreviewPane-Do86TpGp.js",
+            "rawKb": 131.6,
+            "gzipKb": 54
+          },
+          {
+            "file": "assets/QuickOpenPanel-DICtHICz.js",
+            "rawKb": 5.7,
+            "gzipKb": 2.7
+          }
+        ],
+        "previewChunk": "assets/PreviewPane-Do86TpGp.js",
+        "previewDedicated": true
+      },
+      "others": [
+        {
+          "id": "initial-entry-gzip",
+          "value": 37.2,
+          "limit": 250,
+          "pass": true
+        },
+        {
+          "id": "preview-gzip",
+          "value": 54,
+          "limit": 160,
+          "pass": true
+        }
+      ],
+      "headroom": {
+        "remaining": 9.3,
+        "usedPercent": 97.1
+      }
+    },
+    {
+      "id": "memory",
+      "label": "5 sekme açıkken toplam çalışma seti (indirgenmiş toplam çalışma seti)",
+      "durationMs": 36241,
+      "exitCode": 3,
+      "command": "node scripts/measure-perf.mjs --tabs 5 --runs 1 --max-rss-mib 150 --json-out C:\\Users\\bkrgl\\OneDrive\\Desktop\\md-editor\\.temp_files\\budget\\memory.json",
+      "status": "unmeasured",
+      "error": "bellek ölçümü tamamlanmadı (toplam çalışma seti okunamadı)"
+    },
+    {
+      "id": "installer",
+      "label": "Kurulum paketi boyutu (WebView2 hariç)",
+      "durationMs": 44,
+      "exitCode": 0,
+      "command": "node scripts/check-installer-budget.mjs --json-out C:\\Users\\bkrgl\\OneDrive\\Desktop\\md-editor\\.temp_files\\budget\\installer.json",
+      "status": "measured",
+      "unit": "MiB",
+      "value": 2.7,
+      "limit": 12,
+      "pass": true,
+      "detail": {
+        "installers": [
+          {
+            "name": "Markdown Editor_0.1.0_x64-setup.exe",
+            "mib": 2.7,
+            "bytes": 2829198
+          }
+        ]
+      },
+      "headroom": {
+        "remaining": 9.3,
+        "usedPercent": 22.5
+      }
+    }
+  ]
+}

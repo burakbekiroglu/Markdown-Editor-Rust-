@@ -1,0 +1,23 @@
+name: Unit Tests
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  vitest:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+
+      - run: npm ci
+
+      # Guvenlik regresyon paketi bu adimda calisir: uretim CSP'si, capability
+      # izin kumesi ve navigasyon / yeni pencere engelinin kayitli oldugu
+      # iddialari src/lib/security/securityAudit.test.ts icinde dogrulanir.
+      - run: npm test
